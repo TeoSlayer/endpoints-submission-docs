@@ -72,7 +72,7 @@ checker rule ID to clause is in [Compliance checks](../reference/compliance-chec
 !!! warning "Use checker `v1.1.0.0` or later"
     The Offline, power, accuracy-coverage, steady-state and drafter checks arrived in `v1.0.1.0`
     (2026-09-23). `v1.1.0.0` (2026-10-01) added the agentic models and their accuracy gates, fails
-    a single-turn curve with no Offline point, and follows the rules' power model. An older checker
+    a single-turn frontier with no Offline point, and follows the rules' power model. An older checker
     passes submissions the server will reject. Check with
     `endpoints-submission-cli --version`, and upgrade with `pip install -U endpoints-submission-cli`.
 
@@ -92,9 +92,9 @@ if not report.passed:
 `report.warnings` and `report.model_dump_json()` are also available. Wiring this into CI so every
 change to your disclosure files is checked is worth the hour it takes.
 
-### 6. Look at your curves (optional)
+### 6. Look at your frontiers (optional)
 
-The checker tells you whether the submission is valid, not whether the curve looks the way you
+The checker tells you whether the submission is valid, not whether the frontier looks the way you
 expect. To see it, render the same folder in a local dashboard:
 
 ```bash
@@ -103,7 +103,7 @@ mlperf-viz /path/to/submission
 ```
 
 It opens the Pareto Explorer in your browser; nothing is uploaded. Each `<System>/<Model>` pair is
-one curve. Flags and formats: [Results visualizer](../reference/cli-visualizer.md).
+one frontier. Flags and formats: [Results visualizer](../reference/cli-visualizer.md).
 
 ## Verify
 

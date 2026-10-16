@@ -44,7 +44,7 @@ response. What the objector owes you in return is in [§6.4][srules-6.4].
 ## What reviewers are looking at
 
 The minimum scope of a review is in [Submission Rules §2.6][srules-scope-of-review]. Human reviewers
-concentrate on what automation can't check, listed in [§9.2 of the rules][rules-9.2]: curve shape,
+concentrate on what automation can't check, listed in [§9.2 of the rules][rules-9.2]: frontier shape,
 suspicious metric distributions, TTFT and token-count gaming, warmup data, Offline pass boundaries,
 and whether your system description matches what ran.
 

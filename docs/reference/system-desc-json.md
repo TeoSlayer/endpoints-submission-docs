@@ -6,7 +6,7 @@ The hardware and software description of the system under test. **One per Pareto
     You supply it and drop it into each run folder before upload. See [step
     5](../workflow/author-disclosures.md).
 
-The checker verifies that every point of a curve describes the **same** system.
+The checker verifies that every point of a frontier describes the **same** system.
 
 ## Fields and template
 
@@ -20,7 +20,7 @@ produce the file:
   `accelerator_info`, and fill it in.
 
 !!! warning "`tps_utilization` is computed"
-    The checker recomputes it against your own curve (`tps-utilization`).
+    The checker recomputes it against your own frontier (`tps-utilization`).
 
 !!! warning "`cooling` sets your power overhead"
     The checker uses `cooling` to pick the overhead fraction for

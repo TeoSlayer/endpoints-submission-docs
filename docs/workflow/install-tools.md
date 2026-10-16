@@ -83,7 +83,7 @@ git -C endpoints rev-parse HEAD
 
 Both `endpoints-submission-cli` and `submission-checker` come from this one package.
 
-Optionally, install the results visualizer to preview your curves locally before you submit:
+Optionally, install the results visualizer to preview your frontiers locally before you submit:
 
 ```bash
 pip install mlperf-viz
@@ -127,6 +127,6 @@ python -c "from submission_checker.cli import main; main()" regions --max-concur
 
 ## Next
 
-→ [3. Plan your Pareto curve](plan-your-curve.md)
+→ [3. Plan your Pareto frontier](plan-your-curve.md)
 
 Problems? See [Troubleshooting](../help/troubleshooting.md#installation).

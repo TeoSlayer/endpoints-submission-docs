@@ -61,7 +61,7 @@ Two fields need a decision rather than a lookup: `offline` and `dataset_type`.
 !!! warning "Exactly one point carries `offline`"
     For a non-agentic benchmark, one point has to declare `offline: dedicated` or `offline:
     elected`. `elected` is only accepted on the point whose concurrency equals your declared
-    `C_max`. The checker fails a curve with no `offline` declaration unless every point uses the
+    `C_max`. The checker fails a frontier with no `offline` declaration unless every point uses the
     `agentic_inference` load pattern, which is how it recognises an agentic benchmark.
 
     A dedicated Offline run sets `concurrency` to the size of the performance dataset and counts
@@ -80,7 +80,7 @@ Two fields need a decision rather than a lookup: `offline` and `dataset_type`.
 ### 2. Write `system_desc.json` for each point
 
 The hardware and software description. Since policies PR #119 there's no per-system file: **every
-Pareto point carries its own copy**, and the checker verifies all points of a curve describe the
+Pareto point carries its own copy**, and the checker verifies all points of a frontier describe the
 same system.
 
 The fields are defined in [§8.2 of the rules][rules-8.2]. Either capture the file with
@@ -90,13 +90,13 @@ behaviour and known gaps between the rules and the tooling: [`system_desc.json`
 reference](../reference/system-desc-json.md).
 
 !!! tip "`tps_utilization` is computed, not chosen"
-    It is `reported_system_tps / max(reported_system_tps across the curve)`. The checker recomputes
-    it against your own curve. You cannot fill this in until every point has run.
+    It is `reported_system_tps / max(reported_system_tps across the frontier)`. The checker recomputes
+    it against your own frontier. You cannot fill this in until every point has run.
 
 ### 3. Write `system_power.json` for each system
 
 This declares the system's provisioned power, which v1.0 divides throughput by. It's per **system**,
-not per point, because provisioned power is fixed for the whole curve. The builder lifts it from
+not per point, because provisioned power is fixed for the whole frontier. The builder lifts it from
 your run folders to `results/<system>/system_power.json` in the bundle.
 
 The [power model][rules-4.5.2-power-model] and the ways to fill the file are in [§4.5.2 of the

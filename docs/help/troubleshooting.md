@@ -126,7 +126,7 @@ Indexed by what you see. Search this page for a fragment of your error message.
     **Fix:** correct the pointers in every `point.yaml`. This check **rejects** the submission.
 
 ??? failure "`tps-utilization` fails"
-    **Cause:** the value is not `system_tps / max(system_tps)` across your own curve.
+    **Cause:** the value is not `system_tps / max(system_tps)` across your own frontier.
 
     **Fix:** recompute after **every** point has run. You cannot fill it in before then.
 
@@ -137,12 +137,12 @@ Indexed by what you see. Search this page for a fragment of your error message.
     `offline: dedicated`, and 7 otherwise.
 
     **Fix:** run more. Note withdrawn points do not count toward the minimum and **cannot be
-    replaced**, because there's no `add-run`. If the curve needs a different set of runs, create a
+    replaced**, because there's no `add-run`. If the frontier needs a different set of runs, create a
     new submission.
 
 ??? failure "`offline-point-present` fails because no point declares `offline`"
-    **Cause:** no dedicated Offline run and no elected `C_max` point, on a curve the checker reads as
-    single-turn. It treats a curve as agentic only when every point's load pattern is
+    **Cause:** no dedicated Offline run and no elected `C_max` point, on a frontier the checker reads as
+    single-turn. It treats a frontier as agentic only when every point's load pattern is
     `agentic_inference`.
 
     **Fix:** add `offline: elected` to your `C_max` point's `point.yaml`, or run a dedicated Offline

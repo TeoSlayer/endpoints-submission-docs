@@ -76,7 +76,7 @@ What the checker enforces:
 - **`drafter-approval-lead-time`**: a newly approved drafter is usable only from two cohorts after
   the list update, counted against your `target_cohort`.
 
-Both reject the affected **points**, not the whole submission ([§9.1][rules-9.1]). Across the curve
+Both reject the affected **points**, not the whole submission ([§9.1][rules-9.1]). Across the frontier
 it's one drafter; its configuration can vary per point, including switching speculation off. The
 drafter's details go in the `speculative_decoding` block of `point.yaml` ([§8.3][rules-8.3]).
 

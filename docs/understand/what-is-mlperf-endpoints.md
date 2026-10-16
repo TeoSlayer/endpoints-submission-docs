@@ -6,10 +6,10 @@ a framework integration.
 
 ## What it measures
 
-Endpoints measures a curve, not a single number. MLPerf Inference reports latency or throughput at
+Endpoints measures a frontier, not a single number. MLPerf Inference reports latency or throughput at
 one operating point. Real serving systems don't have one operating point — they have a tradeoff
 between total throughput and per-user speed, and you choose where to sit on it. Endpoints measures
-that whole tradeoff as a Pareto curve across concurrency levels.
+that whole tradeoff as a Pareto frontier across concurrency levels.
 
 Four dimensions are captured at each measurement point ([§4.1][rules-4.1]):
 
@@ -31,14 +31,14 @@ regions](../reference/metrics-and-regions.md).
 
 ## Why a step function
 
-The official curve is a **step function**: each point is a step, and the curve holds at the last
+The official frontier is a **step function**: each point is a step, and the frontier holds at the last
 measured value until the next one ([§5.2][rules-5.2]). A smooth line would suggest operating points
 you never measured, and the gaps between points are where problems like memory pressure and latency
 spikes tend to show up.
 
 ## What a submission actually is
 
-One submission is one **Pareto curve**: one system, one benchmark model, one dataset. For most
+One submission is one **Pareto frontier**: one system, one benchmark model, one dataset. For most
 benchmarks it has **8 to 32** measurement points, structured `1 + 3 + 3 + 1` ([§5.3][rules-5.3]):
 
 - **1** point in the Ultra Low Concurrency region (concurrency 1–32),
@@ -49,7 +49,7 @@ benchmarks it has **8 to 32** measurement points, structured `1 + 3 + 3 + 1` ([�
 Agentic benchmarks drop the Offline point, so they need 7.
 
 Region boundaries differ between submitters. They're calculated from your own minimum and maximum
-concurrency, which is covered in [Plan your Pareto curve](../workflow/plan-your-curve.md). Pick your
+concurrency, which is covered in [Plan your Pareto frontier](../workflow/plan-your-curve.md). Pick your
 maximum badly and you'll have to re-run points.
 
 Each point is a sustained run: **600 seconds** of steady state at ultra-low concurrency, **1,200
@@ -66,7 +66,7 @@ throughput ceiling. Only throughput counts, and the reported concurrency is the 
 You can either run it as a separate point or, if your `C_max` point already is your ceiling,
 **elect** that point as the Offline result, which is the 7-point route ([§5.7.2][rules-5.7.2]). How
 to choose is in [Plan your Pareto
-curve](../workflow/plan-your-curve.md#6-decide-how-to-meet-the-offline-requirement).
+frontier](../workflow/plan-your-curve.md#6-decide-how-to-meet-the-offline-requirement).
 
 ## Normalised by provisioned power
 
@@ -90,7 +90,7 @@ framework reports, which is expected. The tokenizer you use internally doesn't a
 
 ## Accuracy is a hard gate
 
-Each benchmark has a quality target, and you have to hit it at several points on the curve, not once
+Each benchmark has a quality target, and you have to hit it at several points on the frontier, not once
 for the whole submission: the four mandatory region points and the Offline point, so five in all, or
 four for an agentic benchmark ([§5.3][rules-5.3]). Single-turn benchmarks must pass at every one of
 those points; multi-turn benchmarks must pass on the average ([§4.3][rules-4.3]). Throughput is

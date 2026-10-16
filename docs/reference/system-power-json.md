@@ -1,7 +1,7 @@
 # `system_power.json`
 
 The provisioned-power descriptor for one system. **One per system**, not per point: provisioned
-power is fixed for the whole curve. Why it exists and what it's used for: [What is MLPerf
+power is fixed for the whole frontier. Why it exists and what it's used for: [What is MLPerf
 Endpoints?](../understand/what-is-mlperf-endpoints.md#normalised-by-provisioned-power).
 
 !!! danger "Required, and authored by you"
