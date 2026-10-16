@@ -19,7 +19,7 @@ and how each one is computed are in [rules §4.1][rules-4.1].
 [`system_power.json`](system-power-json.md). Definition and scope: [rules §4.5.3][rules-4.5.3].
 
 The denominator is the **provisioned** power of the whole system and is the same at every point, so
-the normalized curve is the throughput curve scaled by one constant.
+the normalized frontier is the throughput frontier scaled by one constant.
 
 !!! warning "P90, not P95"
     v1.0 uses P90 ([§4.1][rules-4.1]). The v0.7 rules used P95, and some public MLCommons material
@@ -88,7 +88,7 @@ The charts, and which metric goes on each axis, are listed in [rules §4.2][rule
 chart plots `system_tps` against `tps_per_user`, or against `e2e_avg_interactivity` for an agentic
 benchmark. Higher is better on both axes.
 
-The official curve is a **step function** with no interpolation ([§5.2][rules-5.2]). How a dedicated
+The official frontier is a **step function** with no interpolation ([§5.2][rules-5.2]). How a dedicated
 or elected Offline result is drawn on it is in [§5.7.3][rules-5.7.3].
 
 ## Token counting
@@ -121,7 +121,7 @@ python -c "from submission_checker.cli import main; main()" regions --max-concur
 
 !!! note "`C_min` is derived in v1.0"
     The checker derives `C_min` from your submission's own points rather than reading a declared
-    value, so boundaries differ per curve. Your lowest point silently sets every other boundary.
+    value, so boundaries differ per frontier. Your lowest point silently sets every other boundary.
 
 ### The 10% margin
 

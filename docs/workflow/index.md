@@ -5,7 +5,7 @@
 flowchart TB
     subgraph setup ["Get set up"]
         direction LR
-        R[1 Get access] --> I[2 Install] --> P[3 Plan curve]
+        R[1 Get access] --> I[2 Install] --> P[3 Plan frontier]
     end
     subgraph measure ["Measure and describe"]
         direction LR
@@ -24,7 +24,7 @@ flowchart TB
 | [Before you begin](before-you-begin.md) | A decision to proceed, or to stop before it costs anything |
 | [1. Get access and an API key](register.md) | A [PRISM API key](../understand/eligibility/prism-api-key.md) in `mlc_…` format |
 | [2. Install the tools](install-tools.md) | Reference client, submission CLI, checker |
-| [3. Plan your Pareto curve](plan-your-curve.md) | The concurrency levels you'll run, and your plan for the Offline point |
+| [3. Plan your Pareto frontier](plan-your-curve.md) | The concurrency levels you'll run, and your plan for the Offline point |
 | [4. Run the measurement points](run-the-points.md) | One run folder per point, with accuracy results at the required points |
 | [5. Author the disclosure files](author-disclosures.md) | `system_desc.json` and `point.yaml` per point, `system_power.json` per system |
 | [6. Register your runs](register-runs.md) | One run ID per run folder, uploaded to MLCommons |

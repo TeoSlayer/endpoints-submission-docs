@@ -1,7 +1,7 @@
 # Results visualizer — `mlperf-viz`
 
 Renders a submission folder as a local browser dashboard — the Pareto Explorer — so you can look at
-your curves before submitting, or browse published results. It reads the same layout the
+your frontiers before submitting, or browse published results. It reads the same layout the
 [submission
 checker](https://github.com/mlcommons/endpoints-submission-cli/blob/main/README.md#submission-checker)
 expects. It does **not** validate anything: use the checker for that.
@@ -55,7 +55,7 @@ submission still renders.
 | Accuracy | `accuracy_results.json` | on the system description |
 | Dashboard entry | `<Org>-<submission_id>-<System>-<Model>` | `<Org>-<System>-<Model>` |
 
-One `<System>/<Model>` pair is one Pareto curve and one dashboard entry, so a submission covering
+One `<System>/<Model>` pair is one Pareto frontier and one dashboard entry, so a submission covering
 two models shows as two entries. The v1.0 layout itself is described in
 [Submission package layout](package-layout.md).
 

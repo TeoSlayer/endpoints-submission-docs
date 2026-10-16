@@ -6,7 +6,7 @@ comply. Rules marked :material-alert-octagon:{ style="color:#c62828" } have a fa
 
 --8<-- "precedence-notice.md"
 
-## Curve structure
+## Frontier structure
 
 From [§5.3][rules-5.3], [§5.4][rules-5.4] and [§5.6][rules-5.6], with failure actions from
 [§9.1][rules-9.1].
@@ -22,11 +22,11 @@ From [§5.3][rules-5.3], [§5.4][rules-5.4] and [§5.6][rules-5.6], with failure
 | Every concurrency falls in a valid region (a dedicated Offline run is exempt) | rule `concurrency-in-range` |
 
 Regions are computed in log-2 space from your own `C_min` and `C_max`. See [Plan your Pareto
-curve](../workflow/plan-your-curve.md) and [Metrics and
+frontier](../workflow/plan-your-curve.md) and [Metrics and
 regions](../reference/metrics-and-regions.md).
 
 !!! note "How the checker knows a benchmark is agentic"
-    From the load pattern. A curve whose points all use `agentic_inference` is checked as agentic;
+    From the load pattern. A frontier whose points all use `agentic_inference` is checked as agentic;
     anything else is checked as single-turn, where a missing Offline point fails.
 
 ## The Offline point
@@ -101,12 +101,12 @@ exact test, including the rule for amendments, is the *Seed-set validity* row of
 The per-query salt is seeded from the same set and has its own requirements in
 [§2.9.5.1][rules-2.9.5.1].
 
-## Consistency across the curve
+## Consistency across the frontier
 
 Same model, endpoint configuration, software stack and seed set at **every** point (*Configuration
 consistency* in [§9.1][rules-9.1]). The checker also requires the same dataset
 (`config-consistency-dataset`). Every point's `system_desc.json` must describe the same system, and
-the whole curve uses one provisioned power figure ([§4.5.3][rules-4.5.3]). If you use speculative
+the whole frontier uses one provisioned power figure ([§4.5.3][rules-4.5.3]). If you use speculative
 decoding, it's the same drafter at every point. Freeze the stack before the first run.
 
 ## Power normalization

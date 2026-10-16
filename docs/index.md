@@ -8,7 +8,7 @@ hide:
 How to prepare, validate and submit an MLPerf&reg; Endpoints benchmark result.
 
 MLPerf Endpoints measures how well an **inference endpoint serves generative AI models**. Instead of
-one number, a result is a Pareto curve of throughput against per-user speed across concurrency
+one number, a result is a Pareto frontier of throughput against per-user speed across concurrency
 levels. New to it? Read the four [Understand](understand/index.md) pages, then follow the
 [Submission workflow](workflow/index.md) from *Before you begin* through step 9.
 
@@ -63,7 +63,7 @@ Six things work differently here:
 | | MLPerf Inference | MLPerf Endpoints |
 |---|---|---|
 | Schedule | Fixed rounds, advance registration | Rolling; register by holding a [PRISM token](understand/eligibility/prism-api-key.md) |
-| Result | A score at one operating point | A **Pareto curve** of 7–32 points, the **Offline** result included |
+| Result | A score at one operating point | A **Pareto frontier** of 7–32 points, the **Offline** result included |
 | Divisions | Closed / Open | **Standardized** / **Serviced** / **RDI** |
 | Cross-query KV reuse | Prohibited | **Permitted**, with a per-query salt |
 | TTFT percentile | — | **P90** for v1.0 (v0.7 used P95) |

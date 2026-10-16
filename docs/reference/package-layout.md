@@ -145,10 +145,10 @@ content, are set by [rules §8.1][rules-8.1].
 ### `system_desc.json` is per point, `system_power.json` is per system
 
 Since policies PR #119 **every Pareto point carries its own `system_desc.json`**, and the checker
-verifies that all points of a curve describe the same system.
+verifies that all points of a frontier describe the same system.
 
 `system_power.json` is the one per-system file, because provisioned power is fixed across the whole
-curve. The builder takes it from whichever of the system's run folders supply it and writes it to
+frontier. The builder takes it from whichever of the system's run folders supply it and writes it to
 `results/<system>/`. If two run folders of the same system carry different contents, the build
 fails. See [`system_power.json`](system-power-json.md).
 

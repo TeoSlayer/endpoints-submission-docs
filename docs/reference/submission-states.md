@@ -83,7 +83,7 @@ you. Format, components and how it differs from the submission ID: [rules §8.5]
 
 ## Historical record
 
-MLCommons keeps every version of every Pareto curve, aligned to cohorts: [Versioning and Historical
+MLCommons keeps every version of every Pareto frontier, aligned to cohorts: [Versioning and Historical
 Record][srules-versioning-and-historical-record] in the Submission Rules.
 
 *Last verified against: `mlcommons/endpoints_policies@v1.0_rules_dev` (6b0b1ef) and

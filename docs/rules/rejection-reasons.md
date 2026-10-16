@@ -17,7 +17,7 @@ correct and resubmit as a new submission ([Submission Rules §6.1][srules-6.1]).
 | Symptom | Cause | Fix |
 |---|---|---|
 | `point-count` fails | Fewer than 8 points with a dedicated Offline run, or fewer than 7 otherwise | Run more points. Withdrawn points don't count, and there's no way to add a point to a submission — [plan a spare](../workflow/plan-your-curve.md) |
-| `offline-point-present` fails | Nothing declares `offline` on a single-turn curve, two points do, `elected` sits on a point that isn't at `C_max`, or an agentic curve declares one | Keep exactly one declaration, and elect only the point at your declared `C_max`. An agentic curve has none — [step 3](../workflow/plan-your-curve.md#6-decide-how-to-meet-the-offline-requirement) |
+| `offline-point-present` fails | Nothing declares `offline` on a single-turn frontier, two points do, `elected` sits on a point that isn't at `C_max`, or an agentic frontier declares one | Keep exactly one declaration, and elect only the point at your declared `C_max`. An agentic frontier has none — [step 3](../workflow/plan-your-curve.md#6-decide-how-to-meet-the-offline-requirement) |
 | `power-descriptor` fails | No `system_power.json` for a system, or one with nothing a total can be derived from | Author it — [step 5](../workflow/author-disclosures.md#3-write-system_powerjson-for-each-system) |
 | `*-concurrency-coverage` fails | No point in Low, Medium or High Concurrency | Recompute boundaries with the checker's `regions` command ([step 3](../workflow/plan-your-curve.md#3-compute-the-boundaries)) and run the missing region. Remember the 10% margin is **not** High Concurrency |
 | `ultra-low-concurrency-coverage` fails | No point at concurrency ≤ 32 | Run one in 1–32 |
@@ -40,12 +40,12 @@ stops on any error. Fix them before you submit.
 |---|---|---|
 | `min-query-count` fails | Fewer completed queries than the minimum | Re-run with a longer issue window |
 | `streaming-config` fails | `point.yaml` records `stream_all_chunks: false` | Re-run with it `true`. The rules now allow either value, but the checker still requires `true` |
-| `benchmark-type-consistency` fails | Some points use `agentic_inference` and others don't | Use one load pattern for the whole curve. Until you do, it's checked as single-turn |
-| `config-consistency-model` fails | Points declare different `model_name` values in `point.yaml` | One curve, one model. Fix the name, spelled as in [Benchmarks and models](../reference/benchmarks.md) |
+| `benchmark-type-consistency` fails | Some points use `agentic_inference` and others don't | Use one load pattern for the whole frontier. Until you do, it's checked as single-turn |
+| `config-consistency-model` fails | Points declare different `model_name` values in `point.yaml` | One frontier, one model. Fix the name, spelled as in [Benchmarks and models](../reference/benchmarks.md) |
 | `concurrency-in-range` fails | A point sits outside every valid region | Recompute boundaries — remember `C_min` is **derived from your own lowest point** |
 | `warmup-present` fails | Warmup declaration missing | Declare the warmup block in `point.yaml` |
-| `tps-utilization` fails | Value is not `system_tps / max(system_tps)` over your own curve | Recompute after every point has run |
-| `system-description-consistency` fails | Points describe different systems | One curve, one system. Freeze the stack before the first run |
+| `tps-utilization` fails | Value is not `system_tps / max(system_tps)` over your own frontier | Recompute after every point has run |
+| `system-description-consistency` fails | Points describe different systems | One frontier, one system. Freeze the stack before the first run |
 | `config-consistency-dataset` fails | Points used different datasets | Re-run the odd ones out |
 | `metric-consistency-*` fails | A stored `system_tps`, `tps_per_user` or `system_tps_per_kw` disagrees with the derived value | Don't hand-edit result files |
 
@@ -72,7 +72,7 @@ These don't stop the checker, but reviewers see them and Weeks 1–3 is when the
 
 ## Rejections that come from judgement, not checks
 
-Reviewers look for what automation cannot see: implausible curve shapes, suspiciously uniform TTFT,
+Reviewers look for what automation cannot see: implausible frontier shapes, suspiciously uniform TTFT,
 fake first tokens, padded token counts, contaminated warmup, Offline reordering across passes, and
 system descriptions that don't match what ran. The full list is [§9.2 of the rules][rules-9.2], and
 each concern becomes one of the objection types in [Submission Rules §6.8][srules-6.8], not a

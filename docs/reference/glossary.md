@@ -4,9 +4,9 @@ Terms used across this site. Most also appear as hover tooltips on their first u
 
 ## Benchmark concepts
 
-**Pareto curve**
+**Pareto frontier**
 :   The published result: a step function of `system_tps` against `tps_per_user` across concurrency
-    levels. One curve = one system, one benchmark model, one dataset.
+    levels. One frontier = one system, one benchmark model, one dataset.
 
 **Measurement point**
 :   One benchmark run at one concurrency level. A submission carries 7–32 of them, 8 when one is a
@@ -19,7 +19,7 @@ Terms used across this site. Most also appear as hover tooltips on their first u
     the Offline result.
 
 **Step function**
-:   The official curve representation. Each point is a discrete step; between points the curve holds
+:   The official frontier representation. Each point is a discrete step; between points the frontier holds
     at the last measured value. No interpolation.
 
 **Region of interest (ROI)**
@@ -46,7 +46,7 @@ Terms used across this site. Most also appear as hover tooltips on their first u
 
 **Provisioned power**
 :   What a system is built to draw, estimated from the rated power of its CPUs, accelerators and
-    scale-up switches plus a cooling-dependent overhead. Fixed for a system across its whole curve.
+    scale-up switches plus a cooling-dependent overhead. Fixed for a system across its whole frontier.
     Declared in `system_power.json`.
 
 **MLC Estimated Power**
@@ -161,7 +161,7 @@ Terms used across this site. Most also appear as hover tooltips on their first u
 **Drafter**
 :   The speculative-decoding module (MTP, EAGLE-style head, or a self-speculative pass). Chosen
     from the benchmark's approved list, used unmodified apart from PTQ, and the same across the
-    curve.
+    frontier.
 
 **Approved drafter list**
 :   The per-benchmark, per-round list of drafters a Standardized submission may use. Published for the agentic benchmarks only, in the reference repository's agentic example; the checker's list is still empty.

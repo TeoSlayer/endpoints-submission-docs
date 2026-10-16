@@ -34,14 +34,14 @@ Process and policy questions that are not errors. For errors, see
 ## Scope of a submission
 
 **Can I submit more than one model?**
-:   One *result* is one Pareto curve: one system, one benchmark model, one dataset. A single submission
+:   One *result* is one Pareto frontier: one system, one benchmark model, one dataset. A single submission
     can carry several systems and models, and each becomes its own result.
 
 **How many points do I need?**
 :   For a non-agentic benchmark, 8 to 32: `1 + 3 + 3` fixed-concurrency points plus an Offline
     point. If you elect your `C_max` point as the Offline result, 7 is enough. Agentic benchmarks
     need 7 and have no Offline point. See [§5.3 of the rules][rules-5.3] and [Plan your Pareto
-    curve](../workflow/plan-your-curve.md).
+    frontier](../workflow/plan-your-curve.md).
 
 **Do I really need a separate Offline run?**
 :   No. You can elect your `C_max` point as the Offline result instead, provided you have a point
@@ -88,7 +88,7 @@ Process and policy questions that are not errors. For errors, see
     [§2.9.4 of the rules][rules-2.9.4] and **C10** in [Open questions](open-questions.md).
 
 **Can I disable speculative decoding on some points?**
-:   Yes. The drafter is fixed across the curve, but its configuration can vary per point, including
+:   Yes. The drafter is fixed across the frontier, but its configuration can vary per point, including
     off ([§2.9.4][rules-2.9.4]). A drafter that ships in the canonical checkpoint must stay in your
     derived checkpoint ([§2.9.3][rules-2.9.3]).
 

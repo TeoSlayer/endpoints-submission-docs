@@ -109,7 +109,7 @@ nav:
       - Before you begin: workflow/before-you-begin.md
       - 1. Get access and an API key: workflow/register.md
       - 2. Install the tools: workflow/install-tools.md
-      - 3. Plan your Pareto curve: workflow/plan-your-curve.md
+      - 3. Plan your Pareto frontier: workflow/plan-your-curve.md
       - 4. Run the measurement points: workflow/run-the-points.md
       - 5. Author the disclosure files: workflow/author-disclosures.md
       - 6. Register your runs: workflow/register-runs.md

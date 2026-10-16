@@ -1,4 +1,4 @@
-# 3. Plan your Pareto curve
+# 3. Plan your Pareto frontier
 
 > Produces: the list of concurrency levels you'll run, checked as valid before you spend any
 > accelerator time.
@@ -33,7 +33,7 @@ the rules][rules-5.3]. The cap is in [§5.6][rules-5.6], and the Offline point c
 ### 1. Choose `C_max`
 
 `C_max` is the highest concurrency you choose to benchmark. It sets the top of the High Concurrency
-region, so it's the extent of your published curve. It must be **greater than 32**. Beyond that the
+region, so it's the extent of your published frontier. It must be **greater than 32**. Beyond that the
 choice is yours; the rules explain what to weigh under [Maximum Supported Concurrency in
 §5.4][rules-5.4-cmax].
 

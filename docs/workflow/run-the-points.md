@@ -3,7 +3,7 @@
 > Produces: one run folder per Pareto point, with accuracy results at the required points.
 
 !!! note "Before you begin"
-    - Completed [3. Plan your Pareto curve](plan-your-curve.md)
+    - Completed [3. Plan your Pareto frontier](plan-your-curve.md)
     - You have a list of legal concurrency levels
     - The endpoint under test is up and reachable
     - You know which seed set you are binding to — see [seed set and salt](#seeds-and-salting) below
@@ -38,8 +38,8 @@ The run requirements are in [§6 of the rules][rules-6], and that's where the va
     drain included, which understates what your system does. See [What your numbers are measured
     over](../reference/metrics-and-regions.md#what-your-numbers-are-measured-over).
 
-!!! warning "Configuration consistency is checked across the whole curve"
-    Every point must describe the same system, the same model and the same dataset. A curve
+!!! warning "Configuration consistency is checked across the whole frontier"
+    Every point must describe the same system, the same model and the same dataset. A frontier
     assembled from points run against two different software versions will be flagged and can be
     rejected. Lock your software stack before the first point and don't change it until the last one
     is done.

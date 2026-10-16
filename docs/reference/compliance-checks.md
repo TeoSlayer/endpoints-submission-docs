@@ -55,15 +55,15 @@ rules, and versions before `v1.1.0.0` don't know the agentic models or their acc
 |---|---|---|---|
 | `system-description-present` | §8.2 | Every point has a `system_desc.json` | :material-alert-octagon:{ style="color:#c62828" } |
 | `system-description-valid` | §8.2 | Parses against the `SystemDescription` schema | :material-alert-octagon:{ style="color:#c62828" } |
-| `system-description-consistency` | §9.1 | Every point of a curve describes the same system | :material-flag:{ style="color:#f9a825" } |
+| `system-description-consistency` | §9.1 | Every point of a frontier describes the same system | :material-flag:{ style="color:#f9a825" } |
 | `model-name-valid` | §3.2 | `model_name` is one of the round's supported models | :material-alert-octagon:{ style="color:#c62828" } |
 | `model-name-consistency` | §8.2 | Matches the results directory name | :material-flag:{ style="color:#f9a825" } |
 | `max-concurrency-declared` | §9.1 | Reports `max_supported_concurrency`. A missing value fails `system-description-valid`, and a value ≤ 32 fails `region-computation` | :material-alert-octagon:{ style="color:#c62828" } |
-| `tps-utilization` | §8.2 | Equals `system_tps / max(system_tps)` over the point's own curve | :material-flag:{ style="color:#f9a825" } |
+| `tps-utilization` | §8.2 | Equals `system_tps / max(system_tps)` over the point's own frontier | :material-flag:{ style="color:#f9a825" } |
 | `power-descriptor` | §4.5.2, §9.1 | `results/<system>/system_power.json` exists and a total power can be derived from it | :material-alert-octagon:{ style="color:#c62828" } |
 | `power-estimated` | §4.5.2 | Names component groups left for MLCommons to fill in — the result will carry "MLC Estimated Power" | :material-information:{ style="color:#1565c0" } |
 
-## Regions and curve structure
+## Regions and frontier structure
 
 | Rule ID | Clause | Checks | Severity |
 |---|---|---|---|
@@ -74,7 +74,7 @@ rules, and versions before `v1.1.0.0` don't know the agentic models or their acc
 | `region-placement` | §8.3 | Declared region matches the computed one | :material-information:{ style="color:#1565c0" } |
 | `offline-declared` | §8.3 | `offline` is `dedicated`, `elected` or `none` | :material-alert:{ style="color:#ef6c00" } |
 | `offline-point-present` | §5.7, §9.1 | Single-turn: exactly one Offline point, and `elected` only on the `C_max` point. Agentic: none | :material-alert-octagon:{ style="color:#c62828" } |
-| `benchmark-type-consistency` | §6.1, §9.1 | Every point of the curve uses the same load pattern, so the curve is either agentic or single-turn | :material-flag:{ style="color:#f9a825" } |
+| `benchmark-type-consistency` | §6.1, §9.1 | Every point of the frontier uses the same load pattern, so the frontier is either agentic or single-turn | :material-flag:{ style="color:#f9a825" } |
 | `offline-ordering` | §5.7.2, §9.1 | Dedicated Offline run: `system_tps` ≥ 0.98 × the `C_max` point's, and concurrency ≥ `C_max` | :material-flag:{ style="color:#f9a825" } |
 | `ultra-low-concurrency-coverage` | §5.4, §9.1 | At least one point at concurrency ≤ 32 | :material-alert-octagon:{ style="color:#c62828" } |
 | `low-concurrency-coverage` | §9.1 | At least one point in Low Concurrency | :material-alert-octagon:{ style="color:#c62828" } |
@@ -92,10 +92,10 @@ rules, and versions before `v1.1.0.0` don't know the agentic models or their acc
 
 !!! note "How the checker tells agentic from single-turn"
     Nothing in `point.yaml` names the benchmark type, so the checker reads it from the load pattern.
-    A curve whose points all use `agentic_inference` is agentic: it may not have an Offline point,
+    A frontier whose points all use `agentic_inference` is agentic: it may not have an Offline point,
     and the minimum is 7 points. Anything else is single-turn, and a missing Offline point fails
     `offline-point-present`. If the points disagree, `benchmark-type-consistency` fails and the
-    curve is checked as single-turn.
+    frontier is checked as single-turn.
 
 !!! note "`offline-ordering` needs a point at exactly `C_max`"
     The throughput half of the check looks up the point whose concurrency equals your declared
