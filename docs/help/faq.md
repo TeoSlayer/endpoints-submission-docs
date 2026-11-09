@@ -83,6 +83,10 @@ Process and policy questions that are not errors. For errors, see
 :   Yes. Post-training quantization is permitted under the conditions in
     [§2.9.3 of the rules][rules-2.9.3].
 
+**Can I use speculative decoding?**
+:   Only with a drafter on the benchmark's [approved list](https://github.com/mlcommons/endpoints-submission-cli/blob/main/src/submission_checker/data/approved_drafters.yaml), or a native head that ships in an approved checkpoint. Checker `v1.1.0.0` ships an empty list and rejects every drafter, so use a later release. See
+    [§2.9.4 of the rules][rules-2.9.4] and **C10** in [Open questions](open-questions.md).
+
 **Can I disable speculative decoding on some points?**
 :   Yes. The drafter is fixed across the frontier, but its configuration can vary per point, including
     off ([§2.9.4][rules-2.9.4]). A drafter that ships in the canonical checkpoint must stay in your
@@ -126,7 +130,7 @@ Process and policy questions that are not errors. For errors, see
 ## Review
 
 **Who reviews my submission?**
-:   The review committee for your cohort, plus one designated reviewer assigned at random from
+:   The review committee for your submission, plus one designated reviewer assigned at random from
     outside your organisation. See [Submission Rules §2.1][srules-2.1] and [§2.6][srules-2.6].
 
 **Is a competitor reviewing me a conflict of interest?**
